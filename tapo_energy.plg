@@ -47,6 +47,7 @@
         <![CDATA[
         #!/bin/bash
         rm -rf /usr/local/emhttp/plugins/tapo_energy/
+        rm -rf /boot/config/plugins/tapo_energy/
         ]]>
     </REMOVE>
     
