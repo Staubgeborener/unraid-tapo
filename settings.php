@@ -22,7 +22,7 @@ $settings = file_exists($configFile) ? json_decode(file_get_contents($configFile
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Tapo Energy Settings</title>
+    <title>Tapo Energy Einstellungen</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; }
         .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
