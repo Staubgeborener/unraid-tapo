@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PLUGIN>
+    <NAME>Tapo P110 Energy Monitor</NAME>
+    <AUTHOR>Unraid Community</AUTHOR>
+    <VERSION>1.0</VERSION>
+    <CATEGORY>System</CATEGORY>
+    <DESCRIPTION>Plugin zur Anzeige des Energieverbrauchs des Tapo P110 in Unraid.</DESCRIPTION>
+    
+    <CHANGES>
+        - Erste Version des Plugins mit Dashboard-Anzeige
+    </CHANGES>
+    
+    <CONFIG>
+        <VARIABLE>
+            <NAME>TAPO_EMAIL</NAME>
+            <DESCRIPTION>Tapo Account Email</DESCRIPTION>
+            <TYPE>text</TYPE>
+            <DEFAULT></DEFAULT>
+        </VARIABLE>
+        <VARIABLE>
+            <NAME>TAPO_PASSWORD</NAME>
+            <DESCRIPTION>Tapo Account Passwort</DESCRIPTION>
+            <TYPE>password</TYPE>
+            <DEFAULT></DEFAULT>
+        </VARIABLE>
+        <VARIABLE>
+            <NAME>TAPO_IP</NAME>
+            <DESCRIPTION>IP-Adresse des Tapo P110</DESCRIPTION>
+            <TYPE>text</TYPE>
+            <DEFAULT></DEFAULT>
+        </VARIABLE>
+    </CONFIG>
+    
+    <INSTALL>
+        <![CDATA[
+        #!/bin/bash
+        mkdir -p /usr/local/emhttp/plugins/tapo_energy/
+        cp /boot/config/plugins/tapo_energy.php /usr/local/emhttp/plugins/tapo_energy/index.php
+        chmod +x /usr/local/emhttp/plugins/tapo_energy/index.php
+        ]]>
+    </INSTALL>
+    
+    <REMOVE>
+        <![CDATA[
+        #!/bin/bash
+        rm -rf /usr/local/emhttp/plugins/tapo_energy/
+        ]]>
+    </REMOVE>
+    
+    <MENU>
+        <NAME>Tapo Energy</NAME>
+        <SECTION>Settings</SECTION>
+        <TITLE>Tapo P110 Energieverbrauch</TITLE>
+        <TAB>Settings</TAB>
+        <PAGE>index.php</PAGE>
+    </MENU>
+
+    <DASHBOARD>
+        <WIDGET>
+            <NAME>Tapo P110 Power Usage</NAME>
+            <UPDATE>5</UPDATE>
+            <SCRIPT>/usr/local/emhttp/plugins/tapo_energy/index.php</SCRIPT>
+        </WIDGET>
+    </DASHBOARD>
+</PLUGIN>
