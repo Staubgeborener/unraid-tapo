@@ -36,13 +36,15 @@
         <![CDATA[
         #!/bin/bash
         mkdir -p /usr/local/emhttp/plugins/tapo_energy/
+        
         cp /boot/config/plugins/tapo_energy/settings.php /usr/local/emhttp/plugins/tapo_energy/settings.php
         cp /boot/config/plugins/tapo_energy/index.php /usr/local/emhttp/plugins/tapo_energy/index.php
+        
         chmod +x /usr/local/emhttp/plugins/tapo_energy/settings.php
         chmod +x /usr/local/emhttp/plugins/tapo_energy/index.php
         ]]>
     </INSTALL>
-    
+
     <REMOVE>
         <![CDATA[
         #!/bin/bash
