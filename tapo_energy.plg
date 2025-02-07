@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PLUGIN>
     <NAME>Tapo P110 Energy Monitor</NAME>
-    <AUTHOR>Unraid Community</AUTHOR>
-    <VERSION>1.0</VERSION>
+    <AUTHOR>Staubgeborener</AUTHOR>
+    <VERSION>1.1</VERSION>
     <CATEGORY>System</CATEGORY>
     <DESCRIPTION>Plugin zur Anzeige des Energieverbrauchs des Tapo P110 in Unraid.</DESCRIPTION>
     
     <CHANGES>
-        - Erste Version des Plugins mit Dashboard-Anzeige
+        - Dashboard Anzeige hinzugefügt
+        - Einstellungsseite funktioniert jetzt
     </CHANGES>
     
     <CONFIG>
@@ -36,7 +37,9 @@
         #!/bin/bash
         mkdir -p /usr/local/emhttp/plugins/tapo_energy/
         cp /boot/config/plugins/tapo_energy.php /usr/local/emhttp/plugins/tapo_energy/index.php
+        cp /boot/config/plugins/settings.php /usr/local/emhttp/plugins/tapo_energy/settings.php
         chmod +x /usr/local/emhttp/plugins/tapo_energy/index.php
+        chmod +x /usr/local/emhttp/plugins/tapo_energy/settings.php
         ]]>
     </INSTALL>
     
@@ -52,7 +55,7 @@
         <SECTION>Settings</SECTION>
         <TITLE>Tapo P110 Energieverbrauch</TITLE>
         <TAB>Settings</TAB>
-        <PAGE>index.php</PAGE>
+        <PAGE>settings.php</PAGE>
     </MENU>
 
     <DASHBOARD>
